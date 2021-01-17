@@ -8,16 +8,13 @@ import { ListComponent } from './features/employees/list/list.component';
 import { MapComponent } from './features/employees/map/map.component';
 
 const routes: Routes = [
-  { path: '', component: MainPageComponent },
+  { path: '', component: MainPageComponent, pathMatch: 'full' },
   { path: 'attributes', component: AttributesComponent },
-  {
-    path: 'employees',
-    component: ListComponent,
-    // children: [{ path: 'create-employee', component: CreateEmployeeComponent }],
-  },
-  { path: 'employees/create-employee', component: CreateEmployeeComponent },
-  { path: 'employees/edit-employee/:id', component: EditEmployeeComponent },
+  { path: 'employees', component: ListComponent },
+  { path: 'employees/create', component: CreateEmployeeComponent },
+  { path: 'employees/edit/:id', component: EditEmployeeComponent },
   { path: 'map', component: MapComponent },
+  { path: '**', component: MainPageComponent },
 ];
 
 @NgModule({
