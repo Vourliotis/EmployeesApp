@@ -1,0 +1,27 @@
+[
+  {
+    "id": "1",
+    "name": "Driven",
+    "value": "10"
+  },
+  {
+    "id": "2",
+    "name": "Lazy",
+    "value": "10"
+  },
+  {
+    "id": "3",
+    "name": "Social",
+    "value": "10"
+  },
+  {
+    "id": "4",
+    "name": "Focused",
+    "value": "10"
+  },
+  {
+    "id": "5",
+    "name": "Organized",
+    "value": "10"
+  }
+]

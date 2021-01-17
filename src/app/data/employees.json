@@ -8,8 +8,29 @@
   },
   {
     "id": "2",
-    "name": "Petros",
+    "name": "Peter",
     "birthday": "1994-05-06",
+    "hasCar": false,
+    "address": "Athens"
+  },
+  {
+    "id": "3",
+    "name": "Nick",
+    "birthday": "1990-12-16",
+    "hasCar": true,
+    "address": "Thessaloniki"
+  },
+  {
+    "id": "4",
+    "name": "John",
+    "birthday": "1974-03-36",
+    "hasCar": true,
+    "address": "Athens"
+  },
+  {
+    "id": "5",
+    "name": "James",
+    "birthday": "1982-05-26",
     "hasCar": false,
     "address": "Athens"
   }
