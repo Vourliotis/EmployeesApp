@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -15,7 +15,8 @@ export class EditEmployeeComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
-    private data: DataService
+    private data: DataService,
+    private router: Router
   ) {
     this.editForm = this.fb.group({
       name: [null, Validators.required],
@@ -35,5 +36,8 @@ export class EditEmployeeComponent implements OnInit {
     this.editForm.patchValue(this.data.getEmployeeById(this.routeId));
   }
 
-  formSubmit(): void {}
+  formSubmit(): void {
+    this.data.updateEmployee(this.routeId!, this.editForm.value);
+    this.router.navigate(['employees']);
+  }
 }
