@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-edit-employee',
@@ -9,13 +10,17 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditEmployeeComponent implements OnInit {
   editForm: FormGroup;
-  routeId: string | null = null;
+  routeId: String | null;
 
-  constructor(private fb: FormBuilder, private route: ActivatedRoute) {
+  constructor(
+    private fb: FormBuilder,
+    private route: ActivatedRoute,
+    private data: DataService
+  ) {
     this.editForm = this.fb.group({
       name: [null, Validators.required],
       birthday: [null, Validators.required],
-      hasCar: [null, Validators.required],
+      hasCar: [],
       address: [null, Validators.required],
     });
   }
@@ -26,6 +31,8 @@ export class EditEmployeeComponent implements OnInit {
 
   patchDataToForm() {
     this.routeId = this.route.snapshot.paramMap.get('id');
+    this.data.getEmployeeById(this.routeId);
+    this.editForm.patchValue(this.data.getEmployeeById(this.routeId));
   }
 
   formSubmit(): void {}
