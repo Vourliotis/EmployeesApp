@@ -1,2 +1,27 @@
-<p>main-page works!</p>
-<span>Add cards with menu options</span>
+  <div class="row justify-content-center">
+
+    <div class="card text-white bg-secondary mr-1 col-12 col-lg-4 col-md-12 col-sm-12" style="max-width: 13rem;"
+      [routerLink]="['/attributes']">
+      <div class="card-header">Attribute List</div>
+      <div class="card-body">
+        <p class="card-text">List of all the attributes</p>
+      </div>
+    </div>
+
+    <div class="card text-white bg-secondary mr-1 col-12 col-lg-4 col-md-12 col-sm-12" style="max-width: 13rem;"
+      [routerLink]="['/employees']">
+      <div class="card-header">Employee List</div>
+      <div class="card-body">
+        <p class="card-text">List of all the employees</p>
+      </div>
+    </div>
+
+    <div class="card text-white bg-secondary mr-1 col-12 col-lg-4 col-md-12 col-sm-12" style="max-width: 13rem;"
+      [routerLink]="['/map']">
+      <div class="card-header">Employee Map</div>
+      <div class="card-body">
+        <p class="card-text">Shows the employees on the map</p>
+      </div>
+    </div>
+
+  </div>

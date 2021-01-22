@@ -7,6 +7,9 @@ import { DataService } from '../services/data.service';
   selector: 'app-edit-employee',
   templateUrl: './edit-employee.component.html',
   styleUrls: ['./edit-employee.component.scss'],
+  host: {
+    '[class.w-25]': 'true',
+  },
 })
 export class EditEmployeeComponent implements OnInit {
   editForm: FormGroup;

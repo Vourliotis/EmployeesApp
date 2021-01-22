@@ -1,31 +1,31 @@
-<div class="container-fluid">
   <div class="row">
-    <div class="col-6 mx-auto mt-5">
+    <div class="col-12 mb-2">
       <button class="btn btn-dark" [routerLink]="['./create']">Add Employee</button>
     </div>
   </div>
   <div class="row">
-    <div class="col-6 mx-auto mt-2 mb-3">
-      <table class="table table-bordered table-striped">
-        <thead>
-          <tr>
-            <th scope="col" style="width: 20%">Name</th>
-            <th scope="col" style="width: 35%">Birthday</th>
-            <th scope="col" style="width: 15%">Has a Car</th>
-            <th scope="col" style="width: 30%">Address</th>
-            <th scope="col" style="width: 1%"></th>
-          </tr>
-        </thead>
-        <tbody class="">
-          <tr *ngFor="let employee of listOfEmployees">
-            <td>{{employee.name}}</td>
-            <td>{{employee.birthday}}</td>
-            <td>{{employee.hasCar === true ? 'Yes' : 'No'}}</td>
-            <td>{{employee.address}}</td>
-            <td><button class="btn btn-warning" [routerLink]="['./edit', employee.id]">Edit</button></td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="col-12">
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr class="">
+              <th>Name</th>
+              <th>Birthday</th>
+              <th>Has a Car</th>
+              <th>Address</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody class="">
+            <tr *ngFor="let employee of listOfEmployees">
+              <td>{{employee.name}}</td>
+              <td>{{employee.birthday}}</td>
+              <td>{{employee.hasCar === true ? 'Yes' : 'No'}}</td>
+              <td>{{employee.address}}</td>
+              <td><button class="btn btn-warning" [routerLink]="['./edit', employee.id]">Edit</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-</div>

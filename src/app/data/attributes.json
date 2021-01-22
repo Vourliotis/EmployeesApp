@@ -1,27 +1,27 @@
 [
   {
     "id": "1",
-    "name": "Driven",
-    "value": "10"
+    "name": "Height",
+    "value": "180"
   },
   {
     "id": "2",
-    "name": "Lazy",
-    "value": "10"
+    "name": "Hair Color",
+    "value": "Black"
   },
   {
     "id": "3",
-    "name": "Social",
-    "value": "10"
+    "name": "Height",
+    "value": "190"
   },
   {
     "id": "4",
-    "name": "Focused",
-    "value": "10"
+    "name": "Eye Color",
+    "value": "Brown"
   },
   {
     "id": "5",
-    "name": "Organized",
-    "value": "10"
+    "name": "Hair Color",
+    "value": "Red"
   }
 ]

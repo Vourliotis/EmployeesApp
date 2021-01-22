@@ -7,6 +7,9 @@ import { DataService } from '../services/data.service';
   selector: 'app-create-employee',
   templateUrl: './create-employee.component.html',
   styleUrls: ['./create-employee.component.scss'],
+  host: {
+    '[class.w-25]': 'true',
+  },
 })
 export class CreateEmployeeComponent implements OnInit {
   createForm: FormGroup;
