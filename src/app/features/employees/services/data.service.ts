@@ -45,6 +45,13 @@ export class DataService {
     return result!;
   }
 
+  getAttributeById(id: String | null): Attribute {
+    var result = this.listOfAttributes.find((obj) => {
+      return obj.id === id;
+    });
+    return result!;
+  }
+
   updateEmployee(id: String, employee: Employee) {
     var resultIndex = this.listOfEmployees.findIndex((obj) => {
       return obj.id === id;
@@ -53,5 +60,9 @@ export class DataService {
     this.listOfEmployees[resultIndex].address = employee.address;
     this.listOfEmployees[resultIndex].hasCar = employee.hasCar;
     this.listOfEmployees[resultIndex].birthday = employee.birthday;
+  }
+
+  getJoinedList(): [] {
+    return [];
   }
 }
