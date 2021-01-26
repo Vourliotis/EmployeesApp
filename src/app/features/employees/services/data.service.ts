@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import employees from '../../../data/employees.json';
 import attributes from '../../../data/attributes.json';
-import employeeAttributes from '../../../data/employeeAttributes.json';
 import { Employee } from '../models/employee.model';
 import { Attribute } from '../models/attribute.model';
 import { EmployeeAttribute } from '../models/employee-attribute.model';
@@ -12,7 +11,6 @@ import { EmployeeAttribute } from '../models/employee-attribute.model';
 export class DataService {
   listOfEmployees: Employee[] = employees;
   listOfAttributes: Attribute[] = attributes;
-  listOfEmployeeAttributes: EmployeeAttribute[] = employeeAttributes;
   lastId: number = Number(
     this.listOfEmployees[this.listOfEmployees.length - 1].id
   );
@@ -21,14 +19,6 @@ export class DataService {
 
   getEmployees(): Employee[] {
     return this.listOfEmployees;
-  }
-
-  getAttributes(): Attribute[] {
-    return this.listOfAttributes;
-  }
-
-  getEmployeeAttributes(): EmployeeAttribute[] {
-    return this.listOfEmployeeAttributes;
   }
 
   postEmployee(employee: Employee) {
@@ -45,13 +35,6 @@ export class DataService {
     return result!;
   }
 
-  getAttributeById(id: String | null): Attribute {
-    var result = this.listOfAttributes.find((obj) => {
-      return obj.id === id;
-    });
-    return result!;
-  }
-
   updateEmployee(id: String, employee: Employee) {
     var resultIndex = this.listOfEmployees.findIndex((obj) => {
       return obj.id === id;
@@ -62,7 +45,19 @@ export class DataService {
     this.listOfEmployees[resultIndex].birthday = employee.birthday;
   }
 
-  getJoinedList(): [] {
-    return [];
+  getEmployeeAttributes(): EmployeeAttribute[] {
+    let listOfEmployeeAttributes: EmployeeAttribute[] = [];
+    this.listOfEmployees.map((employee, idx) => {
+      employee.attributes.map((attribute) => {
+        listOfEmployeeAttributes.push({
+          ...attribute,
+          employeeName: employee.name,
+          employeeId: employee.id,
+        });
+        return;
+      });
+      return;
+    });
+    return listOfEmployeeAttributes;
   }
 }

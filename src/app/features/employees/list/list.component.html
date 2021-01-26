@@ -12,8 +12,8 @@
               <th style="width: 20%">Name</th>
               <th style="width: 20%">Birthday</th>
               <th class="text-center" style="width: 10%">Has a Car</th>
-              <th style="width: 30%">Address</th>
-              <th style="width: 10%"></th>
+              <th style="width: 20%">Address</th>
+              <th style="width: 20%"></th>
             </tr>
           </thead>
           <tbody class="">
@@ -22,8 +22,12 @@
               <td>{{employee.birthday}}</td>
               <td class="text-center">{{employee.hasCar === true ? 'Yes' : 'No'}}</td>
               <td>{{employee.address}}</td>
-              <td class="text-center"><button class="btn btn-warning w-100"
-                  [routerLink]="['./edit', employee.id]">Edit</button></td>
+              <td class="text-center">
+                <button class="btn btn-left btn-warning w-50 btn-wrap-text"
+                  [routerLink]="['./edit', employee.id]">Edit</button>
+                <button class="btn btn-right btn-danger w-50 btn-wrap-text"
+                  [routerLink]="['./edit', employee.id]">Delete</button>
+              </td>
             </tr>
           </tbody>
         </table>

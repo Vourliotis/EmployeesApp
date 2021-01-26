@@ -1,4 +1,7 @@
 export class EmployeeAttribute {
-  'emp-id': String;
-  'att-id': String;
+  'id': String;
+  'name': String;
+  'value': String;
+  'employeeName': String;
+  'employeeId': String;
 }

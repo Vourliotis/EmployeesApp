@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Attribute } from '../models/attribute.model';
-import { EmployeeAttribute } from '../models/employee-attribute.model';
 import { Employee } from '../models/employee.model';
+import { EmployeeAttribute } from '../models/employee-attribute.model';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -13,17 +12,12 @@ import { DataService } from '../services/data.service';
   },
 })
 export class AttributesComponent implements OnInit {
-  listOfAttributes: Attribute[];
   listOfEmployees: Employee[];
-  listOfEmployeeAttributes: EmployeeAttribute[];
-  combinedList: [];
+  listOfAttributes: EmployeeAttribute[] = [];
 
   constructor(private dataService: DataService) {
-    this.listOfAttributes = this.dataService.getAttributes();
     this.listOfEmployees = this.dataService.getEmployees();
-    this.listOfEmployeeAttributes = this.dataService.getEmployeeAttributes();
-    this.combinedList = this.dataService.getJoinedList();
-    console.log(this.listOfAttributes);
+    this.listOfAttributes = this.dataService.getEmployeeAttributes();
   }
 
   ngOnInit(): void {}

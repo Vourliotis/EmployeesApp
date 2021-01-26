@@ -8,7 +8,7 @@ import { DataService } from '../services/data.service';
   templateUrl: './edit-employee.component.html',
   styleUrls: ['./edit-employee.component.scss'],
   host: {
-    '[class.w-25]': 'true',
+    '[class.w-75]': 'true',
   },
 })
 export class EditEmployeeComponent implements OnInit {

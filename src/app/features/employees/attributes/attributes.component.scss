@@ -6,3 +6,14 @@
   border-radius: 0 !important;
   border-color: darkgray;
 }
+
+.btn-right {
+  border-left: 0px;
+}
+
+.btn-wrap-text {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  text-overflow: ellipsis;
+}
