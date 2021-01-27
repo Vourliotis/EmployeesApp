@@ -39,6 +39,14 @@ export class DataService {
     return result!;
   }
 
+  getEmployeeAttributeById(attId: String): EmployeeAttribute {
+    let listOfEmployeeAttributes = this.getEmployeeAttributes();
+    let result = listOfEmployeeAttributes.find((obj) => {
+      return obj.id === attId;
+    });
+    return result!;
+  }
+
   updateEmployee(id: String, employee: Employee) {
     var resultIndex = this.listOfEmployees.findIndex((obj) => {
       return obj.id === id;
@@ -47,6 +55,21 @@ export class DataService {
     this.listOfEmployees[resultIndex].address = employee.address;
     this.listOfEmployees[resultIndex].hasCar = employee.hasCar;
     this.listOfEmployees[resultIndex].birthday = employee.birthday;
+  }
+
+  updateAttribute(empId: String, attId: String, attribute: Attribute) {
+    this.listOfEmployees = this.listOfEmployees.map((emp) => {
+      if (emp.id === empId) {
+        emp.attributes.forEach((att) => {
+          if (att.id === attId) {
+            att.name = attribute.name;
+            att.value = attribute.value;
+          }
+          return att;
+        });
+      }
+      return emp;
+    });
   }
 
   getEmployeeAttributes(): EmployeeAttribute[] {

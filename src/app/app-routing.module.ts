@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: '', component: MainPageComponent, pathMatch: 'full' },
   { path: 'attributes', component: AttributesComponent },
   { path: 'attributes/create', component: CreateAttributeComponent },
-  { path: 'attributes/edit/:id', component: EditAttributeComponent },
+  { path: 'attributes/edit/:id/:id2', component: EditAttributeComponent },
   { path: 'employees', component: ListComponent },
   { path: 'employees/create', component: CreateEmployeeComponent },
   { path: 'employees/edit/:id', component: EditEmployeeComponent },

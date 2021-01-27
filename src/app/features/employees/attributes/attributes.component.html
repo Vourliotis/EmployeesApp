@@ -21,7 +21,7 @@
               <td>{{attribute.name}}</td>
               <td>{{attribute.value}}</td>
               <td class="text-center"><button class="btn btn-left btn-warning w-50 btn-wrap-text"
-                  [routerLink]="['./edit', attribute.id]">Edit</button>
+                  [routerLink]="['./edit', attribute.employeeId, attribute.id]">Edit</button>
                 <button class="btn btn-right btn-danger w-50 btn-wrap-text"
                   (click)="deleteAttribute(attribute.id)">Delete</button>
               </td>
