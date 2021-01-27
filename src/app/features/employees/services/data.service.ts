@@ -10,15 +10,13 @@ import { EmployeeAttribute } from '../models/employee-attribute.model';
 })
 export class DataService {
   listOfEmployees: Employee[];
-  listOfAttributes: Attribute[];
-  lastId: number;
+  lastEmployeeId: number;
+  lastAttributeId: number;
 
   constructor() {
     this.listOfEmployees = employees;
-    this.listOfAttributes = attributes;
-    this.lastId = Number(
-      this.listOfEmployees[this.listOfEmployees.length - 1].id
-    );
+    this.lastEmployeeId = 5;
+    this.lastAttributeId = 10;
   }
 
   getEmployees(): Employee[] {
@@ -26,10 +24,24 @@ export class DataService {
   }
 
   postEmployee(employee: Employee) {
-    this.lastId += 1;
-    employee.id = this.lastId.toString();
+    this.lastEmployeeId += 1;
+    employee.id = this.lastEmployeeId.toString();
     this.listOfEmployees.push(employee);
-    console.log(this.lastId);
+    console.log(this.lastEmployeeId);
+  }
+
+  postAttribute(empAtt: EmployeeAttribute) {
+    this.lastAttributeId += 1;
+    this.listOfEmployees.map((emp) => {
+      if (emp.id === empAtt.employeeId) {
+        let att: Attribute = {
+          id: this.lastAttributeId.toString(),
+          name: empAtt.name,
+          value: empAtt.value,
+        };
+        emp.attributes.push(att);
+      }
+    });
   }
 
   getEmployeeById(id: String | null): Employee {
