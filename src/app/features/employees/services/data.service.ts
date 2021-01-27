@@ -9,13 +9,17 @@ import { EmployeeAttribute } from '../models/employee-attribute.model';
   providedIn: 'root',
 })
 export class DataService {
-  listOfEmployees: Employee[] = employees;
-  listOfAttributes: Attribute[] = attributes;
-  lastId: number = Number(
-    this.listOfEmployees[this.listOfEmployees.length - 1].id
-  );
+  listOfEmployees: Employee[];
+  listOfAttributes: Attribute[];
+  lastId: number;
 
-  constructor() {}
+  constructor() {
+    this.listOfEmployees = employees;
+    this.listOfAttributes = attributes;
+    this.lastId = Number(
+      this.listOfEmployees[this.listOfEmployees.length - 1].id
+    );
+  }
 
   getEmployees(): Employee[] {
     return this.listOfEmployees;
@@ -59,5 +63,22 @@ export class DataService {
       return;
     });
     return listOfEmployeeAttributes;
+  }
+
+  deteleEmployee(id: String): null {
+    this.listOfEmployees = this.listOfEmployees.filter(function (obj) {
+      return obj.id !== id;
+    });
+
+    return null;
+  }
+
+  deteleAttribute(id: String) {
+    this.listOfEmployees = this.listOfEmployees.filter(function (obj) {
+      obj.attributes = obj.attributes.filter((att) => {
+        return att.id !== id;
+      });
+      return obj;
+    });
   }
 }

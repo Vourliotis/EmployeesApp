@@ -21,12 +21,12 @@
               <td>{{employee.name}}</td>
               <td>{{employee.birthday}}</td>
               <td class="text-center">{{employee.hasCar === true ? 'Yes' : 'No'}}</td>
-              <td>{{employee.address}}</td>
+              <td>{{employee.address}} [{{employee.lng}}, {{employee.lat}}]</td>
               <td class="text-center">
                 <button class="btn btn-left btn-warning w-50 btn-wrap-text"
                   [routerLink]="['./edit', employee.id]">Edit</button>
                 <button class="btn btn-right btn-danger w-50 btn-wrap-text"
-                  [routerLink]="['./edit', employee.id]">Delete</button>
+                  (click)="deleteEmployee(employee.id)">Delete</button>
               </td>
             </tr>
           </tbody>

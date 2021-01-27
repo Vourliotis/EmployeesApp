@@ -5,5 +5,7 @@ export class Employee {
   'birthday': String;
   'hasCar': boolean;
   'address': String;
+  'lng': number;
+  'lat': number;
   'attributes': Attribute[];
 }

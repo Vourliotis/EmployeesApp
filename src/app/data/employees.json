@@ -4,7 +4,9 @@
     "name": "Xenofon",
     "birthday": "1994-03-06",
     "hasCar": true,
-    "address": "Drama",
+    "address": "Athens",
+    "lng": 37.9736,
+    "lat": 23.7288,
     "attributes": [
       {
         "id": "1",
@@ -24,6 +26,8 @@
     "birthday": "1994-05-06",
     "hasCar": false,
     "address": "Athens",
+    "lng": 37.9821,
+    "lat": 23.7204,
     "attributes": [
       {
         "id": "3",
@@ -42,7 +46,9 @@
     "name": "Nick",
     "birthday": "1990-12-16",
     "hasCar": true,
-    "address": "Thessaloniki",
+    "address": "Athens",
+    "lng": 37.9919,
+    "lat": 23.7269,
     "attributes": [
       {
         "id": "5",
@@ -62,6 +68,8 @@
     "birthday": "1974-03-36",
     "hasCar": true,
     "address": "Athens",
+    "lng": 37.9914,
+    "lat": 23.7503,
     "attributes": [
       {
         "id": "7",
@@ -70,7 +78,7 @@
       },
       {
         "id": "8",
-        "name": "Contry",
+        "name": "Country",
         "value": "Sweden"
       }
     ]
@@ -81,6 +89,8 @@
     "birthday": "1982-05-26",
     "hasCar": false,
     "address": "Athens",
+    "lng": 37.9801,
+    "lat": 23.757,
     "attributes": [
       {
         "id": "9",

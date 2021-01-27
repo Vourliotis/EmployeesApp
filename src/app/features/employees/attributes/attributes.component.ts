@@ -21,4 +21,16 @@ export class AttributesComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  deleteAttribute(id: String) {
+    const result = window.confirm(
+      'Are you sure you want to delete this attribute?'
+    );
+
+    if (result) {
+      this.dataService.deteleAttribute(id);
+      this.listOfEmployees = this.dataService.getEmployees();
+      this.listOfAttributes = this.dataService.getEmployeeAttributes();
+    }
+  }
 }

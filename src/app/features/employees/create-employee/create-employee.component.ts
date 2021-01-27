@@ -24,6 +24,8 @@ export class CreateEmployeeComponent implements OnInit {
       birthday: [null, Validators.required],
       hasCar: [],
       address: [null, Validators.required],
+      lng: [null, Validators.required],
+      lat: [null, Validators.required],
     });
   }
 
